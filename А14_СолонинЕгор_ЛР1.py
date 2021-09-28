@@ -39,10 +39,10 @@ vp = (GLubyte * (w * w * 3))(*vp)
 window = Window(visible=True, width=w, height=w, caption='disc')
 
 
-# @window.event
-# def on_draw():
-#     window.clear()
-#     glDrawPixels(w, w, GL_RGB, GL_UNSIGNED_BYTE, vp)
-#
-#
-# app.run()
+@window.event
+def on_draw():
+    window.clear()
+    glDrawPixels(w, w, GL_RGB, GL_UNSIGNED_BYTE, vp)
+
+
+app.run()
