@@ -94,7 +94,7 @@ def on_draw():
     glPolygonMode(GL_FRONT_AND_BACK , GL_LINE)
     graphics.draw(4, GL_QUADS, ('v3f', quad), ('c3f', 4*[0, 0, 1]))
     glPolygonMode(GL_FRONT_AND_BACK , GL_FILL)
-    glTranslatef(translate_x, translate_y, 0)
+    #glTranslatef(translate_x, translate_y, 0)
     cube_draw()
 
 app.run()
