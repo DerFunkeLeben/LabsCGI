@@ -11,12 +11,13 @@ img_rows = img_cols = 28
 show_k = not True # False True 
 pred = not True 
 mnist = True
-pathToData = "D:\mpei\LabsCGI\А14_СолонинЕгор_ЛР6\mnistBinData\\" if mnist else 'emnist/' 
+folder = "D:\mpei\LabsCGI\А14_СолонинЕгор_ЛР6\\"
+pathToData = folder + "mnistBinData\\" if mnist else folder + 'emnistBinData\\' 
 num_classes = 10 if mnist else 26 
 epochs = 20 
 fn_model = pathToData + 'lk3.h5' 
 # 
-pathToHistory = "D:\mpei\LabsCGI\А14_СолонинЕгор_ЛР6\mnistBinData\\" if mnist else 'emnist/' 
+pathToHistory = folder + "mnistHistory\\" if mnist else folder + 'emnistHistory\\'
 suff = '.txt' 
 # Имена файлов, в которые сохраняется история обучения 
 fn_loss = pathToHistory + 'loss_' + suff 
