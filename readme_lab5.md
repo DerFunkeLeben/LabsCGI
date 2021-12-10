@@ -30,4 +30,4 @@ BACKSPACE. Вращение подвижного источника вокруг
     NUM_3 - уменьшение координаты z
     NUM_6 - увеличение координаты z
 
-    python -m pip install seaborn
+    python -m pip install cv2
