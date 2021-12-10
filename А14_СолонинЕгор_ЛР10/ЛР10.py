@@ -274,7 +274,7 @@ def show_res():
     show_graph()
     print(
         f"Classification report:\n"
-        f"{classification_report(pred, labels)}\n"
+        f"{classification_report(pred, labels, digits=4)}\n"
     )
 
 

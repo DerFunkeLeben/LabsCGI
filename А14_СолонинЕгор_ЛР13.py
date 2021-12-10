@@ -2,12 +2,22 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-w = 200
+w = 80  # размер матрицы пикселей
+vp = [[255]*w for i in range(w)]
+
+add = 15
+b = 70
+x_left_bound = 2
+x_right_bound = 10
+y_left_bound = 2
+y_right_bound = b
 
 
+def getRand(l, r):
+    return np.random.randint(l, r, size=1)[0]
+
+# алгоритм Брезенхема
 def draw_line(x1=0, y1=0, x2=0, y2=0):
-    vp = [[255]*w for i in range(w)]
-
     dx = x2 - x1
     dy = y2 - y1
 
@@ -43,11 +53,28 @@ def draw_line(x1=0, y1=0, x2=0, y2=0):
         t += 1
         vp[x][y] = 0
 
-    return vp
 
+x = getRand(x_left_bound, x_right_bound)
+y = getRand(y_left_bound, y_right_bound)
+coords = [[x, y]]
 
-line = draw_line(0, 0, 150, 100)
-plt.matshow(line)
+# инициализация координат
+for i in range(1, 6):
+    x = getRand(x_left_bound + i * 10, i * add)
+    y = getRand(y_left_bound, y_right_bound)
+    coords.append([x, y])
+
+# рисование линий
+for i in range(5):
+    x1 = coords[i][0]
+    y1 = coords[i][1]
+    x2 = coords[i+1][0]
+    y2 = coords[i+1][1]
+    draw_line(x1, y1, x2, y2)
+draw_line(coords[0][0], coords[0][1], coords[5][0], coords[5][1])
+
+# вывод матрицы пикселей
+plt.matshow(vp)
 
 
 # %%
